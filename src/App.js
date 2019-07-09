@@ -20,6 +20,7 @@ function onAuthRequired({history}) {
 export const ISSUER = process.env.REACT_APP_ISSUER;
 export const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 export const BASE_URL = process.env.REACT_APP_BASE_URL;
+export const WINDOW_LOCATION = process.env.REACT_APP_WINDOW_LOCATION_ORIGIN;
 
 
 class App extends Component {
@@ -30,7 +31,7 @@ class App extends Component {
             <div>
                 <Security   issuer={ISSUER}
                             client_id={CLIENT_ID}
-                            redirect_uri={window.location.origin + '/implicit/callback'}
+                            redirect_uri={{WINDOW_LOCATION} + '/implicit/callback'}
                             onAuthRequired={onAuthRequired}
                 >
                     <Navbar/>
