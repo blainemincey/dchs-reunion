@@ -22,9 +22,12 @@ export default withAuth(class Login extends Component {
     onSuccess(res) {
         if (res.status === 'SUCCESS') {
             this.props.auth.getAccessToken();
-            return this.props.auth.redirect({
+            this.props.auth.redirect({
                 sessionToken: res.session.token
             });
+
+
+            return;
         } else {
             // The user can be in another authentication state that requires further action.
             // For more information about these states, see:

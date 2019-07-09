@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import OktaSignIn from '@okta/okta-signin-widget';
+import OktaSignIn from '@okta/okta-signin-widget/dist/js/okta-sign-in.min';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 import {ISSUER, CLIENT_ID, BASE_URL, WINDOW_LOCATION} from './App';
 
@@ -15,7 +15,7 @@ export default class OktaSignInWidget extends Component {
                 issuer: ISSUER,
                 responseType: ['token', 'id_token'],
                 display: 'page',
-                scope: ['openid', 'profile', 'email']
+                scopes: ['openid', 'profile', 'email']
             },
             features: {
                 registration: true,
