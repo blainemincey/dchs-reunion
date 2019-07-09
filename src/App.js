@@ -17,9 +17,9 @@ function onAuthRequired({history}) {
 }
 
 // Okta Config
-const ISSUER = process.env.REACT_APP_ISSUER;
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+export const ISSUER = process.env.REACT_APP_ISSUER;
+export const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+export const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 
 class App extends Component {
@@ -31,7 +31,8 @@ class App extends Component {
                 <Security   issuer={ISSUER}
                             client_id={CLIENT_ID}
                             redirect_uri={window.location.origin + '/implicit/callback'}
-                            onAuthRequired={onAuthRequired} >
+                            onAuthRequired={onAuthRequired}
+                >
                     <Navbar/>
                     <Container text style={{marginTop: '5em'}}>
                         <Route path="/" exact component={Home}/>

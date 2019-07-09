@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
+import {ISSUER,CLIENT_ID,BASE_URL} from './App';
 
 export default class OktaSignInWidget extends Component {
     componentDidMount() {
         const el = ReactDOM.findDOMNode(this);
         this.widget = new OktaSignIn({
-            baseUrl: this.props.baseUrl,
+            baseUrl: BASE_URL,
+            clientId: CLIENT_ID,
+            redirectUri: window.location.origin + '/implicit/callback',
+            authParams: {
+              issuer: ISSUER,
+              responseType: ['token', 'id_token'],
+              display: 'page'
+            },
             features: {
                 registration: true,
                 rememberMe: false
