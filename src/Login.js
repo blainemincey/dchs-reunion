@@ -21,6 +21,8 @@ export default withAuth(class Login extends Component {
 
     onSuccess(res) {
         if (res.status === 'SUCCESS') {
+            this.widget.tokenManager.add('id_token', res[0]);
+            this.widget.tokenManager.add('access_token', res[1]);
             return this.props.auth.redirect({
                 sessionToken: res.session.token
             });
