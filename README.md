@@ -1,3 +1,11 @@
+Note: This runs great locally.  Totally a bust when trying to deploy externally and use the Okta sign-in widget.  Could never get the redirect to work.  Tried on a multitude of platforms with no luck.  Guess if I wanted to just run it on my laptop, I am good to go ;)
+
+If you find the answer on the web, please let me know.  Tried posting to the Okta dev forums with no luck.  Multitude of folks appear to have the same issue so I will be looking for something alternative or simply write my own...which would have taken less time than trying to get this to work.
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
